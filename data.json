@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "product_name": "Wireless Mouse",
+    "category": "Electronics",
+    "price": 450,
+    "stock": 3
+  },
+  {
+    "id": 2,
+    "product_name": "Keyboard",
+    "category": "Electronics",
+    "price": 850,
+    "stock": 12
+  },
+  {
+    "id": 3,
+    "product_name": "Ballpen",
+    "category": "School Supplies",
+    "price": 20,
+    "stock": 50
+  },
+  {
+    "id": 4,
+    "product_name": "Headphone",
+    "category": "Electronics",
+    "price": 750,
+    "stock": 22
+  },
+  {
+    "id":5,
+    "product_name": "Yellow Pad Paper",
+    "category":"School Supplies",
+    "price": 40,
+    "stock": 0
+  }
+
+]
