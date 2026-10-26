@@ -1,4 +1,3 @@
-
 const express = require('express');
 const fs = require('fs/promises');
 const path = require('path');
@@ -10,7 +9,7 @@ const FILE = path.join(__dirname, 'data.json');
 app.use(express.json());
 app.use(express.static(__dirname));
 
-// Read and save data
+
 async function readData() {
     return JSON.parse(await fs.readFile(FILE, 'utf8'));
 }
@@ -19,7 +18,7 @@ async function saveData(data) {
     await fs.writeFile(FILE, JSON.stringify(data, null, 2));
 }
 
-// Get stock status
+
 function format(product) {
     let status = 'AVAILABLE';
 
@@ -32,7 +31,7 @@ function format(product) {
     return { ...product, stock_status: status };
 }
 
-// GET all products
+
 app.get('/api/products', async (req, res) => {
     try {
         const products = await readData();
@@ -42,7 +41,7 @@ app.get('/api/products', async (req, res) => {
     }
 });
 
-// GET product by ID
+
 app.get('/api/products/:id', async (req, res) => {
     try {
         const id = Number(req.params.id);
@@ -64,7 +63,7 @@ app.get('/api/products/:id', async (req, res) => {
     }
 });
 
-// POST new product
+
 app.post('/api/products', async (req, res) => {
     try {
         const { product_name, category, price, stock } = req.body;
@@ -103,7 +102,7 @@ app.post('/api/products', async (req, res) => {
     }
 });
 
-// DELETE product by ID
+
 app.delete('/api/products/:id', async (req, res) => {
     try {
         const id = Number(req.params.id);
